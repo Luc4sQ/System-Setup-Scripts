@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Install essential packages:"
-sudo pacman --noconfirm -Syu yay-bin flatpak flatseal bazaar discord steam godot keepassxc owncloud-client brave-bin thunderbird git audacity texlive qemu-full
+sudo pacman --noconfirm -Syu yay-bin flatpak flatseal bazaar discord steam godot keepassxc owncloud-client brave-bin thunderbird git audacity texlive qemu-full libvirt dnsmasq openbsd-netcat virt-manager
 
 
 echo "Install AUR essentials:"
