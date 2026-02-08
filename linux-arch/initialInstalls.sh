@@ -1,13 +1,12 @@
 #!/bin/bash
 
-echo "Update all packages first."
-sudo pacman -Syu
-
 echo "Install essential packages:"
-sudo pacman -S flatpak flatseal bazaar discord steam godot keepassxc owncloud-client brave-bin thunderbird git audacity texlive
+sudo pacman --noconfirm -Syu yay-bin flatpak flatseal bazaar discord steam godot keepassxc owncloud-client brave-bin thunderbird git audacity texlive qemu-full
+
 
 echo "Install AUR essentials:"
-yay -S vscodium-bin android-studio
+yay --noconfirm -Syu vscodium-bin android-studio
+
 
 echo "Install codium extensions:"
 codium --install-extension Dart-Code.flutter
