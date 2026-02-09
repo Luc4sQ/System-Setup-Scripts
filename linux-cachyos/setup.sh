@@ -2,6 +2,14 @@
 
 echo "Starting the setup process."
 
+if [ $# -ne 2 ]; then
+    echo "Error: [git email] [git username] arguments are missing"
+    exit 1
+fi    
+
+GIT-USERNAME=$2
+GIT-EMAIL=$1
+
 read -p "Do you want to (re-)install the pacman packages? (Y/n): " input
 confirm=${input:-y}
 if [[ $confirm == [yY] ]]; then
@@ -17,10 +25,8 @@ read -p "Do you want to setup git? (Y/n): " input
 confirm=${input:-y}
 if [[ $confirm == [yY] ]]; then
     echo "Git Setup:"
-    read -p "Enter e-mail: " mail
-    git config --global user.email "$mail"
-    read -p "Enter username: " user
-    git config --global user.name "$user"
+    git config --global user.email "${GIT-EMAIL}"
+    git config --global user.name "${GIT-USERNAME}"
 fi
 
 read -p "Do you want to (re-)install the AUR packages? (Y/n): " input
