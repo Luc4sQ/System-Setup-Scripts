@@ -25,7 +25,7 @@ read -p "Do you want to (re-)install the pacman packages? (Y/n): " input
 confirm=${input:-y}
 if [[ $confirm == [yY] ]]; then
     echo "Install essential packages:"
-    sudo pacman --noconfirm -Syu yay-bin flatpak flatseal bazaar discord steam godot keepassxc owncloud-client brave-bin thunderbird git audacity texlive qemu-full libvirt dnsmasq openbsd-netcat virt-manager
+    sudo pacman --noconfirm -Syu yay-bin flatpak flatseal bazaar discord steam godot keepassxc owncloud-client brave-bin thunderbird git audacity texlive qemu-full libvirt dnsmasq openbsd-netcat virt-manager spotify-launcher
 
     echo "Activate some deamons:"
     sudo systemctl enable libvirtd
