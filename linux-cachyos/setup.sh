@@ -3,6 +3,17 @@
 GITUSERNAME=$2
 GITEMAIL=$1
 
+echo "Did you know, that you can make the setup process faster, by just using:"
+echo "yes | ./setup.sh mail username"
+
+read -p "Proceed? (Y/n): " input
+confirm=${input:-y}
+
+if [[ $confirm != [yY] ]]; then
+    echo "Stopped."
+    exit 0
+fi
+
 echo "Starting the setup process."
 
 if [ $# -ne 2 ]; then
